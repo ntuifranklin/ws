@@ -144,8 +144,7 @@ while l > 0:
   l = len(list_des_numeros_de_pages)
   # page_brute = requests.get(lien_directe)
 page_directe = []
-fichier = "all_links.txt"
-f = open(fichier, "a")
+fichier = "les_liens.csv"
 #print(liste_des_liens_de_recherche)
 for lien_article in liste_des_liens_de_recherche:
  #print(lien_article)
@@ -200,13 +199,21 @@ if poids > 0:
    f.close()
    longeur_tableau = len(page_directe)
    if longeur_tableau > 0:
-    for une_ligne in page_directe:
-     print("Voici un liens de la recherche : ", une_ligne)
+    print("Tableau charger ")
      
    f.close()
  except IOError as e:
    # erreur, peine perdu
    print("Something happened")
 
-# git@github.com:ntuifranklin/ws.git
+# voyons voir
+if len(page_directe) > 0:
+ ff = None
+ ff = open("data.csv","w")
+ if ff is not None:
+  ff.write("")
+  for ligne in page_directe:
+    ff.write(ligne)
+    ff.write("\n")
+   
 
